@@ -1,0 +1,26 @@
+package p7;
+
+import java.util.function.IntBinaryOperator;
+
+public class OperatorEx {
+
+	private static int[] scores = {92,95,87};
+	private static int maxOrMin(IntBinaryOperator operator) {
+		int result = scores[0];
+		for(int score:scores) {
+			result = operator.applyAsInt(result, score);	//1. 92,92 2. 92,95 3. 95,87
+		}
+		return result;
+		
+	}
+	
+	public static void main(String[] args) {
+		int max = maxOrMin((a,b) -> {
+			if(a>=b) return a;
+			else return b;
+		});
+		System.out.println(max);
+
+	}
+
+}

@@ -1,0 +1,36 @@
+package p5;
+
+import java.util.function.BooleanSupplier;
+import java.util.function.Supplier;
+
+public class SupplierEx {
+
+	public static void main(String[] args) {
+		//T get();
+		Supplier<String> supplier = () -> {
+			Car car = new Car();
+			car.setName("소나타");
+			return car.getName();
+		};
+
+		System.out.println(supplier.get());
+	}
+	
+	//BooleanSupplier - 소나타면 true , DoubleSupplier - 세금 가격30,000,000*2.25% , 
+	//IntSupplier 가격30,000,000
+	BooleanSupplier booleanSupplier = () ->{
+		if(equals("소나타"))
+		return true;
+		else return false;
+	};
+
+}
+class Car{
+	String name;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return name;
+	}
+}

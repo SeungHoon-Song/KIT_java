@@ -1,0 +1,16 @@
+package p4;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class ConsoleEx {
+
+	public static void main(String[] args) throws IOException {
+		System.out.println("입력하세요==>");
+		InputStream is = System.in;
+		char inputChar = (char) is.read();
+		System.out.println("출력: "+inputChar);
+
+	}
+
+}

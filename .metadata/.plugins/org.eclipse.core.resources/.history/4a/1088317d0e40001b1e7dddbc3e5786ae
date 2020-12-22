@@ -1,0 +1,24 @@
+package p5;
+
+import java.util.function.IntBinaryOperator;
+
+public class MethodReferenceEx {
+
+	public static void main(String[] args) {
+		IntBinaryOperator operator;	//추상메소드 int applyAsInt(int left,int right);
+		//정적 메소드 참조
+		operator = (x,y) -> Calculator.staticMethod(x, y);
+		System.out.println(operator.applyAsInt(1, 2));
+		
+
+	}
+
+}
+class Calculator{
+	public static int staticMethod(int x, int y) {	//정적 메소드 선언
+		return x+y;
+	}
+	public int instanceMethod(int x,int y) {	//인스턴스 메소드 선언
+		return x+y;
+	}
+}

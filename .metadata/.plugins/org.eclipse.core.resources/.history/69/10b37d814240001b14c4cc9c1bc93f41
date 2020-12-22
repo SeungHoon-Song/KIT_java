@@ -1,0 +1,14 @@
+package exam03;
+
+public class MyFunctionalInterfaceExample {
+
+	public static void main(String[] args) {
+		MyFunctionalInterface fi;
+		
+		fi = (x,y) -> {
+			System.out.println(x+y);
+		};
+		fi.method(5, 6);
+	}
+
+}

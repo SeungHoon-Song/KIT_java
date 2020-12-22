@@ -1,0 +1,17 @@
+package ex1;
+
+public class DataExample {
+	public static void dbWork(DataAccessObject dao) {
+		dao.select();
+        dao.insert();
+        dao.update();
+        dao.delete();
+
+   }
+
+    public static void main(String[] args){
+      dbWork(new OracleDao());
+      dbWork(new MySqlDao());
+
+  }
+}

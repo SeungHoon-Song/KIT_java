@@ -1,0 +1,15 @@
+package p3;
+
+import java.util.function.Predicate;
+
+public class PredicateIsEqualEx {
+
+	public static void main(String[] args) {
+		Predicate<String> predicate;
+		
+		predicate = Predicate.isEqual(null);
+		System.out.println(predicate);
+		System.out.println("null null : "+predicate.test(null));
+	}
+
+}

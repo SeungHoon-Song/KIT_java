@@ -1,0 +1,19 @@
+package p3;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+
+public class ReaderEx2 {
+
+	public static void main(String[] args) throws IOException {
+		Reader reader = new FileReader("C:/temp/fRtest1.txt");
+		int readCharNo;
+		char[] cbuf = new char[10];
+		String data = "";
+		readCharNo = reader.read(cbuf,2,3);
+		System.out.println((char)readCharNo);
+	}
+
+}

@@ -1,0 +1,21 @@
+package p3;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class InputStreamEx {
+	public static void main(String[] args) throws IOException {
+		InputStream is = new FileInputStream("C:\\Temp\\IStest.txt");
+		int readByteNo;
+		byte[] readBytes = new byte[2];
+		String data ="";
+		while(true) {
+			readByteNo = is.read(readBytes);	//배열 크기 2바이트를 읽어온다, 1바이트는 한글이나 특수문자등 unicode자료는 깨짐
+			if(readByteNo == -1) break;
+			System.out.print((char)readByteNo);	//아스키 코드값으로 출력
+		}
+		is.close();
+	}
+}

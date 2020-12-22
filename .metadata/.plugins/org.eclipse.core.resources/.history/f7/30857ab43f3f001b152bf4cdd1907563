@@ -1,0 +1,27 @@
+package p4;
+
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+
+public class ConsumerEx {
+
+	public static void main(String[] args) {
+		Consumer<String> consumer = t -> System.out.println(t + "8");
+		consumer.accept("java");
+
+		// void accepr(T t, U u); 람다식으로 accept메소드를 오버라이딩
+		BiConsumer<Integer, Integer> biConsumer = (t, u) -> {
+			System.out.println(t);
+			System.out.println(u);
+		};
+		biConsumer.accept(10, 200);
+
+		//void accept(double value);
+		DoubleConsumer doubleConsumer = t -> {
+			t=t+100; System.out.println(t);
+		};
+		doubleConsumer.accept(2.2);
+	}
+
+}
